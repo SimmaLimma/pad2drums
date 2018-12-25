@@ -18,9 +18,9 @@ def pad2drums(read_from_fname, save_to_fname):
     hit_indices, hit_strengths = detect_sound(raw_audio, stereo=True)
     
     dg = DrumGenerator(fs=fs)
-    drum_audio = dg.generate_drum_audio(hit_indices, hit_strengths, sig.size):
+    drum_audio = dg.generate_drum_audio(hit_indices, hit_strengths, raw_audio.size)
 
     # Save drum_audio to file name for save_to_file added by user
     save_path = 'results/' + save_to_fname
-    save_wav(file_name, drum_audio, fs)
+    save_wav(save_path, drum_audio, fs)
     
